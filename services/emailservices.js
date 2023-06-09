@@ -4,7 +4,7 @@ require("dotenv/config");
 async function sendMail({from,to,subject,text,html}){
 let transporter=nodemailer.createTransport({
     host:process.env.SMTP_HOST,
-    port:process.env.SMTP_PORT,
+    port:process.env.SMTP_PORT ||587,
     secure:false,
     auth:{
         user:process.env.MAIL_USER,
